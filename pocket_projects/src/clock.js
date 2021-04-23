@@ -14,6 +14,7 @@ class Clock {
     printTime() {
         const timeString = [this.hours, this.minutes, this.seconds].join(":");
         return timeString;
+        // console.log(timeString);
     }
 
     _tick() {
