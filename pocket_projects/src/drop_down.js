@@ -1,4 +1,5 @@
-import { htmlGenerator } from "./warmup";
+const dogListEl = document.querySelector(".drop-down-dog-list");
+const nav = document.querySelector(".drop-down-dog-nav")
 
 const dogs = {
   "Corgi": "https://www.akc.org/dog-breeds/cardigan-welsh-corgi/",
@@ -26,14 +27,26 @@ function attachDogLinks() {
   for (let k in dogs) {
     const dogLink = dogLinkCreator(k, dogs[k]);
     dogLinks.push(dogLink);
-  }
+  }3
 
-  dogLinks.forEach( function(li) {
-    const ul = document.querySelector("ul");
-
-    ul.append(li);
-    debugger
-  });
+  return dogLinks;
 }
-const dogListEl = document.querySelector(".drop-down-dog-list");
+
+function handleEnter() {
+  dogListEl.classList.add(".drop-down-dog-list-dropped");
+}
+
+function handleLeave() {
+  const droppedDown = document.querySelector('.drop-down-dog-list-dropped');
+  droppedDown.classList.add(".drop-down-dog-list");
+}
+
+const htmlGenerator = (string, htmlElement) => {
+    string.forEach( function(li) {
+      htmlElement.append(li);
+    });
+};
+
+
+
 htmlGenerator(attachDogLinks(), dogListEl);
