@@ -1,5 +1,5 @@
 const dogListEl = document.querySelector(".drop-down-dog-list");
-const nav = document.querySelector(".drop-down-dog-nav")
+const nav = document.querySelector(".drop-down-dog-nav");
 
 const dogs = {
   "Corgi": "https://www.akc.org/dog-breeds/cardigan-welsh-corgi/",
@@ -27,13 +27,14 @@ function attachDogLinks() {
   for (let k in dogs) {
     const dogLink = dogLinkCreator(k, dogs[k]);
     dogLinks.push(dogLink);
-  }3
+  }
 
   return dogLinks;
 }
 
-function handleEnter() {
-  dogListEl.classList.add(".drop-down-dog-list-dropped");
+function handleEnter(list) {
+  // dogListEl.classList.add(".drop-down-dog-list-dropped");
+  
 }
 
 function handleLeave() {
@@ -47,6 +48,10 @@ const htmlGenerator = (string, htmlElement) => {
     });
 };
 
-
+// const mouseTarget = dogListEl.querySelector('.dog-link');
+nav.addEventListener('mouseenter', e => {
+  debugger
+  handleEnter(e.currentTarget);
+});
 
 htmlGenerator(attachDogLinks(), dogListEl);

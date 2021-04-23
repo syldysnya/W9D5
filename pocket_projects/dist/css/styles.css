@@ -26,9 +26,11 @@ h1 {
   display: none;
 }
 
-.drop-down-dog-list-droppped {
+.drop-down-dog-list.show {
   display: block;
 }
+
+
 
 /*  Phase 4: Slide In & Out Classes */
 
