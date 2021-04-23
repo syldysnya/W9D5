@@ -1,3 +1,6 @@
+body {
+  display: flex;
+}
 
 html {
   box-sizing: border-box;
@@ -25,12 +28,6 @@ h1 {
 .drop-down-dog-list {
   display: none;
 }
-
-.drop-down-dog-list.show {
-  display: block;
-}
-
-
 
 /*  Phase 4: Slide In & Out Classes */
 

@@ -32,14 +32,13 @@ function attachDogLinks() {
   return dogLinks;
 }
 
-function handleEnter(list) {
-  // dogListEl.classList.add(".drop-down-dog-list-dropped");
+function handleEnter() {
+  dogListEl.style.display = 'block';
   
 }
 
 function handleLeave() {
-  const droppedDown = document.querySelector('.drop-down-dog-list-dropped');
-  droppedDown.classList.add(".drop-down-dog-list");
+  dogListEl.style.display = 'none';
 }
 
 const htmlGenerator = (string, htmlElement) => {
@@ -48,10 +47,8 @@ const htmlGenerator = (string, htmlElement) => {
     });
 };
 
-// const mouseTarget = dogListEl.querySelector('.dog-link');
-nav.addEventListener('mouseenter', e => {
-  debugger
-  handleEnter(e.currentTarget);
-});
+
+nav.addEventListener('mouseenter', handleEnter);
+nav.addEventListener('mouseleave', handleLeave)
 
 htmlGenerator(attachDogLinks(), dogListEl);
