@@ -19,7 +19,8 @@ class Clock {
 
     _tick() {
         this._incrementSeconds();
-        this.printTime();
+        // console.log(this.printTime());
+        htmlGenerator(this.printTime(), clockElement);
     }
 
     _incrementSeconds() {
@@ -46,4 +47,3 @@ class Clock {
 const clockElement = document.getElementById('clock');
 const clock = new Clock();
 
-htmlGenerator(clock.printTime(), clockElement);
